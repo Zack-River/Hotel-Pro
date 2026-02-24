@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Noto Serif Arabic", ui-serif, Georgia, serif;
+  --font-display: "Cormorant Garamond", "Noto Serif Arabic", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary-deep: #0D1B2A;
+  --color-primary-mid: #1A2E4A;
+  --color-gold-primary: #C9A84C;
+  --color-gold-light: #E8C97A;
+  --color-gold-muted: #8B6914;
+  --color-cream-base: #FAF7F2;
+  --color-warm-white: #FFF9F0;
+  --color-accent-teal: #1B6B7B;
+  --color-marble-light: #F0EDE8;
+  --color-text-dark: #1C1917;
+  --color-text-mid: #44403C;
+  --color-text-subtle: #78716C;
+  --color-success: #065F46;
+  --color-border: #E8E2D9;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee2: marquee2 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes marquee2 {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-base);
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet-active {
+  background-color: var(--color-gold-primary) !important;
+}
+
+/* Noise Texture */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* Grid Lines */
+.bg-grid-lines {
+  background-image: linear-gradient(to right, rgba(201, 168, 76, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(201, 168, 76, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+
